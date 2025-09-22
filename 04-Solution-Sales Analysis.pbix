@@ -1,1 +1,24 @@
-DAX measures
+DAX measures-
+
+https://microsoftlearning.github.io/PL-300-Microsoft-Power-BI-Data-Analyst/Instructions/Labs/04-create-dax-calculations.html
+
+Create calculated tables.
+Create calculated columns.
+Create measures.
+
+Year =
+"FY" & YEAR('Date'[Date]) + IF(MONTH('Date'[Date]) > 6, 1)
+
+ MonthKey =
+ (YEAR('Date'[Date]) * 100) + MONTH('Date'[Date])
+
+ Avg Price =  
+ AVERAGE(Sales[Unit Price])
+
+ Target =
+ IF(
+     HASONEVALUE('Salesperson (Performance)'[Salesperson]),
+     SUM(Targets[TargetAmount])
+ )
+
+
